@@ -71,3 +71,12 @@ for t in text:
         print("one character")
     else:
         print("more than one")
+
+
+for t in text:
+    if len(t) == 0:
+        print('empty string')
+    elif len(t) > 0:
+        print('not empty')
+    else:
+        print("this should never print")
