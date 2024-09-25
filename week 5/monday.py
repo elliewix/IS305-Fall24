@@ -50,7 +50,27 @@ text_target.mkdir(exist_ok=True)
 
 print(text_target.exists())
 
-# for fname, content in horse_data.items():
+# starting here for Wed content
 
+for fname, content in horse_data.items():
+    # pratice printing out the file paths first
+    f = pathlib.Path(fname)
+    full_path = text_target / f
+    # print to check
+    # print(full_path) # okay path looks good
+    # so we now have the filename and the content
+    # which means we are ready to write the files out
+    full_path.write_text(content)
 
+print(dupes)
 
+## write out a csv
+## reusing the headers
+## and the content is the dupes list
+
+## write it out using the stand csv pattern
+
+with open('dupe_failures.csv', 'wt', encoding='utf-8') as outfile:
+    csvout = csv.writer(outfile)
+    csvout.writerow(headers) # note the singular row
+    csvout.writerows(dupes) # note the plural, give it the 2d list of rows
