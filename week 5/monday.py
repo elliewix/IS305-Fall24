@@ -60,7 +60,7 @@ for fname, content in horse_data.items():
     # print(full_path) # okay path looks good
     # so we now have the filename and the content
     # which means we are ready to write the files out
-    full_path.write_text(content)
+    full_path.write_text(content, encoding= 'utf-8')
 
 print(dupes)
 
